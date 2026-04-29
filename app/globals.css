@@ -8,19 +8,78 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff !important;
+    --foreground: #000000 !important;
   }
 }
 
+/* Content font */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-raleway), sans-serif !important;
+}
+
+/* Heading font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Times New Roman", serif !important;
+}
+
+h1 {
+  font-size: 46px !important;
+}
+
+h2 {
+  font-size: 35px !important;
+  font-weight: 600 !important;
+}
+h4 {
+  font-size: 24px !important;
+  font-family: raleway !important;
+}
+
+p {
+  font-size: 16px !important;
+}
+
+.red-gradient {
+  background: linear-gradient(90deg, #e91925 0%, #a60133 100%) !important;
+}
+
+.red-gradient-btn {
+  background: linear-gradient(90deg, #e91925 0%, #a60133 100%) !important;
+  transition: opacity 0.2s ease-in-out;
+  font-family: "Times New Roman", serif !important;
+}
+.red-gradient-btn:hover {
+  opacity: 0.9;
+}
+
+.red-gradient-btn:active {
+  opacity: 0.8;
+}
+
+.blue-gradient {
+  background: linear-gradient(90deg, #100B34 0%, #100B34 100%) !important;
+}
+
+.text-blue {
+  color: #190F5E !important;
+}
+
+.bg-red-gradient {
+  background: linear-gradient(90deg, #e91925 0%, #a60133 100%) !important;  
+}
+
+.bg-sand-light {
+  background-color: #F7F1E5 !important;
+}
+
+.text-sand-light {
+  color: #F7F1E5 !important;
 }
