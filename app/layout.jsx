@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Raleway } from "next/font/google";
+import Script from "next/script";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -9,13 +10,85 @@ const raleway = Raleway({
   weight: ["400", "500", "600", "700"],
 });
 
+/* ================= SEO METADATA ================= */
+export const metadata = {
+  metadataBase: new URL("https://www.tejasmaritime.com"),
+
+  title: {
+    default: "Tejas Maritime",
+    template: "%s | Tejas Maritime",
+  },
+
+  description:
+    "Tejas Maritime provides technical management, marine consulting, survey and ship design services worldwide.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Tejas Maritime",
+    description:
+      "Precision maritime solutions for global shipping.",
+    url: "https://www.tejasmaritime.com",
+    siteName: "Tejas Maritime",
+    images: [
+      {
+        url: "/og-image.jpg", // 👉 put inside public Image Size: 1200 × 630/
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Tejas Maritime",
+    description: "Precision maritime solutions",
+    images: ["/og-image.jpg"],
+  },
+};
+
+/* ================= LAYOUT ================= */
 const RootLayout = ({ children }) => {
   return (
     <html lang="en" className={raleway.variable}>
       <body>
+
+        {/* ================= GTM SCRIPT ================= */}
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+        >
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];
+            w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id=GTM-XXXX';
+            f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-XXXX');
+          `}
+        </Script>
+
+        {/* ================= GTM NOSCRIPT ================= */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
+        {/* ================= SITE ================= */}
         <Header />
         <main>{children}</main>
         <Footer />
+
       </body>
     </html>
   );
