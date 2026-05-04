@@ -17,7 +17,7 @@ const clients = [
 ];
 
 const ClientsSection = () => {
-  const visibleLogos = 5;
+  const [visibleLogos, setVisibleLogos] = useState(5);
   const loopedClients = [
     ...clients.slice(-visibleLogos),
     ...clients,
@@ -27,6 +27,22 @@ const ClientsSection = () => {
   const [index, setIndex] = useState(visibleLogos);
   const [isAnimating, setIsAnimating] = useState(true);
   const [shouldAutoSlide, setShouldAutoSlide] = useState(false);
+
+  useEffect(() => {
+    const updateVisibleLogos = () => {
+      const isMobile = window.innerWidth < 768;
+      setVisibleLogos(isMobile ? 2 : 5);
+    };
+
+    updateVisibleLogos();
+    window.addEventListener("resize", updateVisibleLogos);
+
+    return () => window.removeEventListener("resize", updateVisibleLogos);
+  }, []);
+
+  useEffect(() => {
+    setIndex(visibleLogos);
+  }, [visibleLogos]);
 
   // Start auto slide only when section enters viewport
   useEffect(() => {
@@ -81,11 +97,11 @@ const ClientsSection = () => {
   }, [isAnimating]);
 
   return (
-    <section ref={sectionRef} className="bg-[#e9e4d8] py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section ref={sectionRef} className="bg-[#e9e4d8] py-12 md:py-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Title */}
-        <h2 className="text-center text-3xl md:text-4xl font-serif text-[#1c1c5a] mb-16">
+        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-serif text-[#1c1c5a] mb-10 md:mb-16">
           OUR CLIENTS
         </h2>
 
@@ -99,13 +115,13 @@ const ClientsSection = () => {
             }}
           >
             {loopedClients.map((src, i) => (
-              <div key={`${src}-${i}`} className="min-w-[20%] flex justify-center px-2">
+              <div key={`${src}-${i}`} className="flex justify-center px-2" style={{ minWidth: `${100 / visibleLogos}%` }}>
                 <Image
                   src={src}
                   alt="client logo"
                   width={150}
                   height={90}
-                  className="object-contain"
+                  className="object-contain h-[85px] w-auto"
                 />
               </div>
             ))}
@@ -113,10 +129,10 @@ const ClientsSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="max-w-6xl mx-auto mt-20 bg-gradient-to-r from-[#0b0b3c] to-[#1a145f] text-white rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="max-w-6xl mx-auto mt-12 md:mt-20 bg-linear-to-r from-[#0b0b3c] to-[#1a145f] text-white rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-14 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 md:gap-8">
 
           <div className="max-w-xl">
-            <h3 className="text-2xl md:text-[35px] font-serif mb-4">
+            <h3 className="text-xl sm:text-2xl md:text-[35px] font-serif mb-3 md:mb-4">
               Your next project deserves the right partnership from the start.
             </h3>
 
@@ -128,7 +144,7 @@ const ClientsSection = () => {
           <Button
             href="/contact"
             label="SPEAK TO OUR EXPERTS"
-            className="red-gradient-btn px-6 py-3 rounded-full text-white font-medium"
+            className="red-gradient-btn px-5 sm:px-6 py-3 rounded-full text-white text-xs sm:text-sm font-medium text-center w-full sm:w-auto"
           />
 
         </div>

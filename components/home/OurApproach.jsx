@@ -21,23 +21,23 @@ const approachData = [
 
 const ApproachSection = () => {
   return (
-    <section className="bg-[#e9e4d8] py-16">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-[#e9e4d8] py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Title */}
-        <h2 className="text-center text-3xl md:text-4xl font-serif text-blue mb-16">
+        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-serif text-blue mb-10 md:mb-16">
           Our Approach
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16">
 
           {/* LEFT CONTENT */}
           <div>
-            <h3 className="text-3xl md:text-4xl font-serif text-blue mb-6 leading-snug font-semibold">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-blue mb-4 md:mb-6 leading-snug font-semibold">
               Where Quality Meets Reliability
             </h3>
 
-            <p className="text-gray-700 mb-6 leading-relaxed">
+            <p className="text-gray-700 mb-4 md:mb-6 leading-relaxed">
               The company is committed to delivering reliable and cost-effective marine services while maintaining the highest standards of quality. We deliver more than services—we deliver assurance.
             </p>
 
@@ -47,12 +47,12 @@ const ApproachSection = () => {
           </div>
 
           {/* RIGHT CONTENT (MAP LIST) */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
 
             {approachData.map((item, index) => (
-              <div key={index} className="pb-6 border-b border-red-500">
+              <div key={index} className="pb-5 md:pb-6 border-b border-red-500">
 
-                <h3 className="text-2xl font-serif text-blue mb-2 font-semibold">
+                <h3 className="text-xl sm:text-2xl font-serif text-blue mb-2 font-semibold">
                   {item.title}
                 </h3>
 

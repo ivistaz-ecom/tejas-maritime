@@ -18,16 +18,16 @@ const Footer = () => {
     <footer className="bg-[#e9e4d8] text-[#1c1c5a] relative border-t border-red-500">
 
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 md:gap-10 gap-4 text-center md:text-left">
 
         {/* LEFT */}
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <Image
             src="/home/footer-logo.svg" // update your logo path
             alt="Tejas Maritime"
             width={120}
             height={120}
-            className="mb-4"
+            className="mb-4 mx-auto md:mx-0 w-20 h-20 md:w-24 md:h-24"
           />
 
           <span className="italic mb-4 text-[14px]">
@@ -42,38 +42,55 @@ const Footer = () => {
 
         {/* CENTER */}
         <div>
-          <h3 className="text-xl font-serif mb-4 font-semibold">Useful Links</h3>
+          <h3 className="text-xl font-serif md:mb-4 mb-2 font-semibold">Useful Links</h3>
 
-          <ul className="space-y-2">
+          <ul className="space-y-1">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/services">Services</Link></li>
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/contact">Contact Us</Link></li>
+            <li><Link href="/about-us">About Us</Link></li>
+            <li><Link href="/contact-us">Contact Us</Link></li>
           </ul>
         </div>
 
         {/* RIGHT */}
         <div>
-          <h3 className="text-xl font-serif mb-4 font-semibold">Contact Us</h3>
+          <h3 className="text-xl font-serif md:mb-4 mb-2 font-semibold">Contact Us</h3>
 
           <ul className="space-y-3 text-sm">
 
-            <li className="flex items-start gap-2">
-              <FiMapPin className="mt-1" />
-              <span>
-                Office No. 19, Ideal Trade Center Sector 11,
-                Plot No. 64, CBD Belapur Navi Mumbai – 400614, India
-              </span>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/TEJAS+MARITIME+PVT.+LTD+(Formerly+known+as+Mac+Ship+Design+%26+Construction+Pvt.Ltd)/@19.0150708,73.0385057,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c15e35c8833f:0xcf140c99d7ca0e97!8m2!3d19.0150708!4d73.0385057!16s%2Fg%2F1pp2vbkym?entry=tts&g_ep=EgoyMDI2MDQxNS4wIPu8ASoASAFQAw%3D%3D&skid=7c8f08c9-954f-4053-a1ab-8f3c5f8a29ed"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start justify-center md:justify-start gap-2 hover:opacity-80 transition"
+              >
+                <FiMapPin className="mt-0.5 h-5 w-5 shrink-0" />
+                <span className="max-w-xs md:max-w-none">
+                  Office No. 19, Ideal Trade Center Sector 11,
+                  Plot No. 64, CBD Belapur Navi Mumbai – 400614, India
+                </span>
+              </a>
             </li>
 
-            <li className="flex items-center gap-2">
-              <FiMail />
-              <span>info@tejasmaritime.com</span>
+            <li>
+              <a
+                href="mailto:info@tejasmaritime.com"
+                className="flex items-center justify-center md:justify-start gap-2 hover:opacity-80 transition"
+              >
+                <FiMail className="h-5 w-5 shrink-0" />
+                <span>info@tejasmaritime.com</span>
+              </a>
             </li>
 
-            <li className="flex items-center gap-2">
-              <FiPhone />
-              <span>022-27561423</span>
+            <li>
+              <a
+                href="tel:+912227561423"
+                className="flex items-center justify-center md:justify-start gap-2 hover:opacity-80 transition"
+              >
+                <FiPhone className="h-5 w-5 shrink-0" />
+                <span>022-27561423</span>
+              </a>
             </li>
 
           </ul>
@@ -82,8 +99,10 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-[#0b0b3c] text-white text-sm text-center py-4">
+      <div className="bg-[#0b0b3c]"> 
+      <div className=" text-white text-[12px] py-4 max-w-7xl mx-auto px-6">
         Copyright © {year} Tejas Maritime. All Rights Reserved
+      </div>
       </div>
 
       {/* Scroll To Top */}

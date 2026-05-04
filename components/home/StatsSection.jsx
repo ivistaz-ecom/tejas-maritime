@@ -64,22 +64,22 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-red-gradient text-white py-16">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+    <section ref={sectionRef} className="bg-red-gradient text-white py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
 
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-serif mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif mb-8 md:mb-12">
           WHY TEJAS MARITIME?
         </h2>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
 
           {statsData.map((item, index) => (
             <div key={index}>
               
               {/* Count */}
-              <h3 className="text-4xl md:text-5xl font-serif font-semibold">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold">
                 <Counter target={item.value} shouldStart={shouldStartCount} />
               </h3>
 

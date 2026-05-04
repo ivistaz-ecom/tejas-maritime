@@ -47,6 +47,29 @@ p {
   font-size: 16px !important;
 }
 
+/* Mobile typography */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 32px !important;
+  }
+
+  h2 {
+    font-size: 28px !important;
+  }
+
+  h3 {
+    font-size: 24px !important;
+  }
+
+  h4 {
+    font-size: 20px !important;
+  }
+
+  p {
+    font-size: 16px !important;
+  }
+}
+
 .red-gradient {
   background: linear-gradient(90deg, #e91925 0%, #a60133 100%) !important;
 }
@@ -70,6 +93,12 @@ p {
 
 .text-blue {
   color: #190F5E !important;
+}
+.text-red{
+  color: #A30133 !important;
+}
+.bg-blue {
+  background-color: #190F5E !important;
 }
 
 .bg-red-gradient {
