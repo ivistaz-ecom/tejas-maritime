@@ -2,10 +2,23 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { FiMapPin, FiMail, FiPhone, FiArrowUp } from "react-icons/fi";
+
+const SCROLL_TOP_THRESHOLD = 80;
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShowScrollTop(window.scrollY > SCROLL_TOP_THRESHOLD);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -105,13 +118,17 @@ const Footer = () => {
       </div>
       </div>
 
-      {/* Scroll To Top */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-6 bg-black text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"
-      >
-        <FiArrowUp />
-      </button>
+      {/* Scroll To Top — hidden until user scrolls past threshold */}
+      {showScrollTop && (
+        <button
+          type="button"
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 bg-black text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition z-50"
+          aria-label="Scroll to top"
+        >
+          <FiArrowUp />
+        </button>
+      )}
 
     </footer>
   );

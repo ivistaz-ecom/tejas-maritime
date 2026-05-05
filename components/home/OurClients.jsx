@@ -129,7 +129,7 @@ const ClientsSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="max-w-6xl mx-auto mt-12 md:mt-20 bg-linear-to-r from-[#0b0b3c] to-[#1a145f] text-white rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-14 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 md:gap-8">
+        <div className="max-w-6xl mx-auto mt-12 md:mt-20 bg-linear-to-r from-[#0b0b3c] to-[#1a145f] text-white rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
 
           <div className="max-w-xl">
             <h3 className="text-xl sm:text-2xl md:text-[35px] font-serif mb-3 md:mb-4">
@@ -141,12 +141,13 @@ const ClientsSection = () => {
             </p>
           </div>
 
-          <Button
-            href="/contact"
-            label="SPEAK TO OUR EXPERTS"
-            className="red-gradient-btn px-5 sm:px-6 py-3 rounded-full text-white text-xs sm:text-sm font-medium text-center w-full sm:w-auto"
-          />
-
+          <div className="w-full sm:w-auto flex justify-center md:justify-end shrink-0">
+            <Button
+              href="/contact-us"
+              label="SPEAK TO OUR EXPERTS"
+              className="red-gradient-btn px-5 sm:px-6 py-3 rounded-full text-white text-xs sm:text-sm font-medium text-center w-full sm:w-auto"
+            />
+          </div>
         </div>
 
       </div>

@@ -8,13 +8,13 @@ export const metadata = {
   description:
     "Contact Tejas Maritime for marine consulting, technical management, and survey services.",
   alternates: {
-    canonical: "https://www.tejasmaritime.com/contact",
+    canonical: "https://www.tejasmaritime.com/contact-us",
   },
   openGraph: {
     title: "Contact Tejas Maritime",
     description:
       "Reach out to our experts for maritime consulting services.",
-    url: "https://www.tejasmaritime.com/contact",
+    url: "https://www.tejasmaritime.com/contact-us",
     images: [
       {
         url: "/contact/contact-banner.jpg", // 👈 use JPG if possible

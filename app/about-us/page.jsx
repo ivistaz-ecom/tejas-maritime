@@ -13,13 +13,13 @@ export const metadata = {
   description:
     "Learn about Tejas Maritime, our leadership, expertise, and commitment to delivering precision maritime solutions worldwide.",
   alternates: {
-    canonical: "https://www.tejasmaritime.com/about",
+    canonical: "https://www.tejasmaritime.com/about-us",
   },
   openGraph: {
     title: "About Tejas Maritime",
     description:
       "Discover our journey, leadership, and the strength behind our maritime expertise.",
-    url: "https://www.tejasmaritime.com/about",
+    url: "https://www.tejasmaritime.com/about-us",
     images: [
       {
         url: "/about/about-banner.jpg", // 👈 use JPG if possible
