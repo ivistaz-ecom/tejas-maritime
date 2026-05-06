@@ -106,6 +106,8 @@ const TeamSection = () => {
           <FiArrowLeft className="text-white text-xl" />
         </button>
 
+
+
         {/* RIGHT ARROW */}
         <button
           onClick={nextSlide}
