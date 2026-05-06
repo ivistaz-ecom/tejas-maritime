@@ -1,6 +1,7 @@
 import React from "react";
 import HeroBanner from "@/components/contact-us/HeroBanner";
 import ContactSection from "@/components/contact-us/ContactSection";
+import Map from "@/components/contact-us/Map"
 
 /* ================= SEO ================= */
 export const metadata = {
@@ -36,6 +37,7 @@ const ContactUsPage = () => {
     <div>
       <HeroBanner />
       <ContactSection />
+      <Map />
     </div>
   );
 };

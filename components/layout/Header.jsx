@@ -45,11 +45,14 @@ const Header = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={
-                  isActive
-                    ? "bg-white text-black px-5 py-2 rounded-full font-medium transition-colors"
-                    : "text-white px-5 py-2 rounded-full hover:bg-white hover:text-black font-medium transition-colors"
-                }
+                className={`
+                  wave-link px-5 py-2 rounded-full font-medium transition-colors
+                  ${
+                    isActive
+                      ? "wave-active text-[#000000] bg-white" // ice blue text
+                      : "text-white"
+                  }
+                `}
               >
                 {link.label}
               </Link>

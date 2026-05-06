@@ -112,3 +112,53 @@ p {
 .text-sand-light {
   color: #F7F1E5 !important;
 }
+
+/* 🌊 Default wave (hover = white) */
+.wave-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 6px;
+  background: url("data:image/svg+xml,%3Csvg width='120' height='6' viewBox='0 0 120 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3 Q 15 0 30 3 T 60 3 T 90 3 T 120 3 V6 H0 Z' fill='white'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover (white wave) */
+.wave-link:hover::after {
+  opacity: 1;
+  animation: waveMove 1.5s linear infinite;
+}
+
+/* 🌊 Active (ICE BLUE wave) */
+.wave-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 6px;
+  background: url("data:image/svg+xml,%3Csvg width='120' height='6' viewBox='0 0 120 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3 Q 15 0 30 3 T 60 3 T 90 3 T 120 3 V6 H0 Z' fill='%23AEE9F7'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  animation: waveMove 1.5s linear infinite;
+  opacity: 1;
+}
+
+/* Animation */
+@keyframes waveMove {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
