@@ -35,14 +35,15 @@ const Footer = () => {
 
         {/* LEFT */}
         <div className="flex flex-col items-center md:items-start">
-          <Image
-            src="/home/footer-logo.svg" // update your logo path
-            alt="Tejas Maritime"
-            width={120}
-            height={120}
-            className="mb-4 mx-auto md:mx-0 w-20 h-20 md:w-24 md:h-24"
-          />
-
+          <Link href="/">
+            <Image
+              src="/home/footer-logo.svg" // update your logo path
+              alt="Tejas Maritime"
+              width={120}
+              height={120}
+              className="mb-4 mx-auto md:mx-0 w-20 h-20 md:w-24 md:h-24"
+            />
+         </Link>
           <span className="italic mb-4 text-[14px]">
             (Formerly as Macship Design & Construction Pvt. Ltd.)
           </span>

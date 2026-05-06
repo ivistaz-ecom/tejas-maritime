@@ -57,7 +57,7 @@ const CrewSection = () => {
           >
             <div className={isDark ? "max-w-7xl mx-auto md:px-6" : ""}>
 
-              <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+              <div className="grid md:grid-cols-2 gap-10 md:gap-10 items-start">
 
                 {/* LEFT */}
                 <div>
@@ -86,7 +86,7 @@ const CrewSection = () => {
                       className={`flex items-start gap-3 px-4 py-4 sm:px-6 ${
                         isDark
                           ? i % 2 === 1
-                            ? "bg-white/10 backdrop-blur-sm rounded-md"
+                            ? "bg-white/10 backdrop-blur-sm "
                             : ""
                           : i % 2 === 0
                             ? "bg-[#E2DCD5]"

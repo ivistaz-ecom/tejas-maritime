@@ -56,12 +56,10 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en" className={raleway.variable}>
       <head>
-        <link
+      <link
           rel="preload"
           as="image"
           href="/home/home_banner_v2.webp"
-          imagesrcset="/home/home_banner_v2.webp"
-          imagesizes="100vw"
         />
       </head>
       <body>

@@ -123,7 +123,7 @@ const TabSection = () => {
                   i % 2 === 0 ? "bg-[#E2DCD5]" : ""
                 }`}
               >
-                <FiCheck className="text-[#1F0EB3] mt-1 h-5 w-5 shrink-0" />
+                <FiCheck className="text-[#1F0EB3] mt-1 h-4 w-5 shrink-0" />
 
                 <p className="text-sm sm:text-base text-[#1c1c5a]">
                   {point}

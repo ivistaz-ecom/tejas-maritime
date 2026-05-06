@@ -97,6 +97,7 @@ const TeamSection = () => {
         <button
           onClick={prevSlide}
           disabled={index === 0}
+          aria-label="Previous slide"
           className="absolute left-0 sm:-left-2 md:-left-6 top-1/2 -translate-y-1/2 z-10 
           red-gradient-btn w-12 h-12 rounded-full flex items-center justify-center 
           shadow-lg transition hover:scale-110 
@@ -109,6 +110,7 @@ const TeamSection = () => {
         <button
           onClick={nextSlide}
           disabled={index >= teamData.length - visibleCards}
+          aria-label="Next slide"
           className="absolute right-0 sm:-right-2 md:-right-6 top-1/2 -translate-y-1/2 z-10 
           red-gradient-btn w-12 h-12 rounded-full flex items-center justify-center 
           shadow-lg transition hover:scale-110 
@@ -136,6 +138,7 @@ const TeamSection = () => {
                     src={item.image}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition duration-500 hover:scale-110"
                   />
                 </div>

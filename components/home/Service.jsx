@@ -12,8 +12,8 @@ const Service = () => {
         </div>
         </div>
         <div className='flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-8 justify-center' >
-        <Link href="#" className='red-gradient-btn text-white px-6 py-3 rounded-full text-xs sm:text-sm uppercase text-center w-fit '>Begin a Partnership</Link>
-        <Link href="#" className='red-gradient-btn text-white px-6 py-3 rounded-full text-xs sm:text-sm uppercase text-center w-fit ' >Explore Our Services</Link>
+        <Link href="/contact-us" className='red-gradient-btn text-white px-6 py-3 rounded-full text-xs sm:text-sm uppercase text-center w-fit '>Begin a Partnership</Link>
+        <Link href="/services" className='red-gradient-btn text-white px-6 py-3 rounded-full text-xs sm:text-sm uppercase text-center w-fit ' >Explore Our Services</Link>
         </div>
         </div>
   )

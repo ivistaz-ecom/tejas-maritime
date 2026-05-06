@@ -33,7 +33,7 @@ const CtaBanner = () => {
 
             {/* BUTTON */}
             <Link
-              href="/contact"
+              href="/contact-us"
               className="mt-6 md:mt-0 bg-white text-[#1c1c5a] px-6 py-3 rounded-full text-sm md:text-base font-medium "
             >
               SPEAK TO OUR EXPERTS

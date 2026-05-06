@@ -18,6 +18,7 @@ const LeadershipSection = () => {
                 src="/about-us/sharad-kumar-soni.webp"
                 alt="Sharad Kumar Soni"
                 fill
+                sizes="(max-width: 768px) 320px, (max-width: 1024px) 380px, 480px"
                 className="object-cover object-top"
                 priority
               />

@@ -29,7 +29,7 @@ const ApproachSection = () => {
           Our Approach
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-10">
 
           {/* LEFT CONTENT */}
           <div>

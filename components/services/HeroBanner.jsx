@@ -29,6 +29,7 @@ const ServicesHero = () => {
         }
         alt="Services Banner"
         fill
+        sizes="100vw"
         priority
         className="object-cover"
       />
