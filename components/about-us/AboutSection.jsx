@@ -42,6 +42,9 @@ const AboutSection = () => {
             </div>
           </div>
 
+
+
+
           {/* RIGHT IMAGE */}
           <div className="w-full flex justify-center">
   <Image
@@ -61,3 +64,7 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+
+
+
+
