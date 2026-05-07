@@ -15,26 +15,26 @@ export const metadata = {
   metadataBase: new URL("https://www.tejasmaritime.com"),
 
   title: {
-    default: "Tejas Maritime",
-    template: "%s | Tejas Maritime",
+    default: "Tejas Maritime | Maritime Technical Management & Crew Management Services",
+    // template: "%s | Tejas Maritime",
   },
 
   description:
-    "Tejas Maritime provides technical management, marine consulting, survey and ship design services worldwide.",
+    "Tejas Maritime provides maritime technical management, ship crew management, naval architecture services, marine surveys, and ship design & construction solutions for commercial vessels worldwide.",
 
   alternates: {
     canonical: "/",
   },
 
   openGraph: {
-    title: "Tejas Maritime",
+    title: "Tejas Maritime | Maritime Technical Management & Crew Management Services",
     description:
-      "Precision maritime solutions for global shipping.",
+      "Tejas Maritime provides maritime technical management, ship crew management, naval architecture services, marine surveys, and ship design & construction solutions for commercial vessels worldwide.",
     url: "https://www.tejasmaritime.com",
     siteName: "Tejas Maritime",
     images: [
       {
-        url: "/og-image.jpg", // 👉 put inside public Image Size: 1200 × 630/
+        url: "/og-images/home_og.png", // 👉 put inside public Image Size: 1200 × 630/
         width: 1200,
         height: 630,
       },

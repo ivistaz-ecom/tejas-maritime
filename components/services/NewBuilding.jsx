@@ -13,7 +13,7 @@ const CtaBanner = () => {
           {/* Background Image */}
           <Image
             src="/services/new-build.webp" // replace with your image
-            alt="CTA Banner"
+            alt="Container Vessel on port"
             width={1400}
             height={400}
             className="w-full h-[260px] md:h-[300px] object-cover"
@@ -34,7 +34,7 @@ const CtaBanner = () => {
             {/* BUTTON */}
             <Link
               href="/contact-us"
-              className="mt-6 md:mt-0 bg-white text-[#1c1c5a] px-6 py-3 rounded-full text-sm md:text-base font-medium "
+              className="silver-shine-btn mt-6 md:mt-0 bg-white text-[#1c1c5a] px-6 py-3 rounded-full text-sm md:text-base font-medium "
             >
               SPEAK TO OUR EXPERTS
             </Link>

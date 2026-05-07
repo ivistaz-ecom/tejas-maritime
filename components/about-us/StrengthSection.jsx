@@ -50,7 +50,7 @@ const StrengthSection = () => {
 
               <Image
                 src="/about-us/delivery.webp" // update path
-                alt="Marine engineers working"
+                alt="Seafarers fixing on vessel"
                 width={520}
                 height={520}
                 className="object-contain"

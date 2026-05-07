@@ -162,3 +162,85 @@ p {
     transform: translateX(0%);
   }
 }
+
+
+/* RED CTA SHINE ANIMATION */
+.shine-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: premiumShine 3s ease-in-out infinite;
+}
+
+@keyframes premiumShine {
+  0% {
+    left: -120%;
+  }
+
+  20% {
+    left: 140%;
+  }
+
+  100% {
+    left: 140%;
+  }
+}
+
+.silver-shine-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.silver-shine-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 70%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(180, 180, 180, 0.15) 35%,
+    rgba(120, 120, 120, 0.35) 45%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(120, 120, 120, 0.35) 55%,
+    rgba(180, 180, 180, 0.15) 65%,
+    transparent 80%
+  );
+
+  transform: rotate(20deg);
+  filter: blur(2px);
+
+  animation: silverPremiumShine 3.5s ease-in-out infinite;
+}
+
+@keyframes silverPremiumShine {
+  0% {
+    left: -150%;
+  }
+
+  25% {
+    left: 180%;
+  }
+
+  100% {
+    left: 180%;
+  }
+}

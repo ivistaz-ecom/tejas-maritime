@@ -5,20 +5,20 @@ import Map from "@/components/contact-us/Map"
 
 /* ================= SEO ================= */
 export const metadata = {
-  title: "Contact Us",
+  title: "Contact Tejas Maritime | Ship Management & Marine Survey Experts",
   description:
-    "Contact Tejas Maritime for marine consulting, technical management, and survey services.",
+    "Contact Tejas Maritime for maritime technical management, crew management services, naval architecture consultancy, marine surveys, and ship design solutions worldwide.",
   alternates: {
     canonical: "https://www.tejasmaritime.com/contact-us",
   },
   openGraph: {
-    title: "Contact Tejas Maritime",
+    title: "Contact Tejas Maritime | Ship Management & Marine Survey Experts",
     description:
-      "Reach out to our experts for maritime consulting services.",
+      "Contact Tejas Maritime for maritime technical management, crew management services, naval architecture consultancy, marine surveys, and ship design solutions worldwide.",
     url: "https://www.tejasmaritime.com/contact-us",
     images: [
       {
-        url: "/contact/contact-banner.jpg", // 👈 use JPG if possible
+        url: "/og-images/contact_og.png", // 👈 use JPG if possible
         width: 1200,
         height: 630,
         alt: "Tejas Maritime Contact",

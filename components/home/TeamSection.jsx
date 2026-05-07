@@ -9,21 +9,25 @@ const teamData = [
     image: "/home/naval-architects.webp",
     title: "Naval Architects",
     desc: "Design, stability analysis, and structural integrity from keel to superstructure.",
+    alt:"Architect holding design",
   },
   {
     image: "/home/marine-engineers.webp",
     title: "Marine Engineers",
     desc: "Mechanical and electrical systems, propulsion, and engineering compliance.",
+    alt:"Seafarers at port",
   },
   {
     image: "/home/technical-managers.webp",
     title: "Technical Managers",
     desc: "Operational authority and flag state expertise from professionals with sea experience.",
+    alt:"Seafarer checking engine",
   },
   {
     image: "/home/senior-marine-professionals.webp",
     title: "Senior Marine Professionals",
     desc: "Decades of hands-on vessel experience, lending judgment and authority where technical knowledge alone is not enough.",
+    alt:"Seafarer talking on port",
   },
 ];
 

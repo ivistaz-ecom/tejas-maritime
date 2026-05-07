@@ -9,20 +9,20 @@ import Philosophy from "@/components/about-us/Philosophy";
 /* ================= SEO ================= */
 
 export const metadata = {
-  title: "About Us",
+  title: "About Tejas Maritime | Maritime Consulting & Technical Experts",
   description:
-    "Learn about Tejas Maritime, our leadership, expertise, and commitment to delivering precision maritime solutions worldwide.",
+    "Established in 2009, Tejas Maritime delivers maritime consulting, naval architecture services, marine engineering, ship surveys, and technical management for commercial vessels globally.",
   alternates: {
     canonical: "https://www.tejasmaritime.com/about-us",
   },
   openGraph: {
-    title: "About Tejas Maritime",
+    title: "About Tejas Maritime | Maritime Consulting & Technical Experts",
     description:
-      "Discover our journey, leadership, and the strength behind our maritime expertise.",
+      "Established in 2009, Tejas Maritime delivers maritime consulting, naval architecture services, marine engineering, ship surveys, and technical management for commercial vessels globally.",
     url: "https://www.tejasmaritime.com/about-us",
     images: [
       {
-        url: "/about/about-banner.jpg", // 👈 use JPG if possible
+        url: "/og-images/about_og.png", // 👈 use JPG if possible
         width: 1200,
         height: 630,
         alt: "Tejas Maritime About",

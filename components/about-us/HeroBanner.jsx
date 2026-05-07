@@ -27,7 +27,7 @@ const ServicesHero = () => {
             ? "/about-us/about-us-banner.webp"
             : "/about-us/about-us-mob-banner.webp"
         }
-        alt="Services Banner"
+        alt="Seafarer at port"
         fill
         sizes="100vw"
         priority

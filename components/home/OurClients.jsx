@@ -145,7 +145,7 @@ const ClientsSection = () => {
             <Button
               href="/contact-us"
               label="SPEAK TO OUR EXPERTS"
-              className="red-gradient-btn px-5 sm:px-6 py-3 rounded-full text-white text-xs sm:text-sm font-medium text-center w-full sm:w-auto"
+              className="red-gradient-btn shine-btn px-5 sm:px-6 py-3 rounded-full text-white text-xs sm:text-sm font-medium text-center w-full sm:w-auto"
             />
           </div>
         </div>

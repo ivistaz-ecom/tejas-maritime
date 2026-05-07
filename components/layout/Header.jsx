@@ -43,19 +43,26 @@ const Header = () => {
 
             return (
               <Link
-                key={link.href}
-                href={link.href}
-                className={`
-                  wave-link px-5 py-2 rounded-full font-medium transition-colors
-                  ${
-                    isActive
-                      ? "wave-active text-[#000000] bg-white" // ice blue text
-                      : "text-white"
-                  }
-                `}
-              >
-                {link.label}
-              </Link>
+              key={link.href}
+              href={link.href}
+              className={`
+                wave-link
+                px-5 py-2
+                rounded-full
+                font-medium
+                transition-all
+                duration-300
+                relative
+                overflow-hidden
+                ${
+                  isActive
+                    ? "wave-active bg-[#100B34] text-white shadow-lg shadow-[#5FD4FF]/20"
+                    : "text-white hover:bg-white/10"
+                }
+              `}
+            >
+              {link.label}
+            </Link>
             );
           })}
         </nav>
@@ -96,7 +103,18 @@ const Header = () => {
         <Button
           href="/contact-us"
           label="Request Consultation"
-          className="hidden md:inline-flex red-gradient-btn text-white px-6 py-3 rounded-full text-sm uppercase"
+          className="
+            hidden md:inline-flex
+            red-gradient-btn
+            text-white
+            px-6 py-3
+            rounded-full
+            text-sm
+            uppercase
+            relative
+            overflow-hidden
+            shine-btn
+          "
         />
       </div>
 

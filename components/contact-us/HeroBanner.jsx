@@ -27,7 +27,7 @@ const ServicesHero = () => {
             ? "/contact/contact_home_banner.webp"
             : "/contact/contact_home_banner.webp"
         }
-        alt="Services Banner"
+        alt="Tanker moving on sea"
         fill
         sizes="100vw"
         priority

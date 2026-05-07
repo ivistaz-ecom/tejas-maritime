@@ -18,7 +18,7 @@ const ContactSection = () => {
             <div className="relative w-full h-[220px] md:h-[350px]">
                 <Image
                     src="/contact/contact-ship.webp"
-                    alt="Port"
+                    alt="Container vessel coming to port"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"

@@ -8,9 +8,9 @@ import OurApproach from "@/components/home/OurApproach";
 import OurServices from "@/components/home/OurServices";
 import OurClients from "@/components/home/OurClients";
 export const metadata = {
-  title: "Tejas Maritime | Maritime Services",
+  title: "Tejas Maritime | Maritime Technical Management & Crew Management Services",
   description:
-    "Tejas Maritime provides expert maritime services including shipping, logistics, and offshore solutions.",
+    "Tejas Maritime provides maritime technical management, ship crew management, naval architecture services, marine surveys, and ship design & construction solutions for commercial vessels worldwide.",
 };
 
 const HomePage = () => {
