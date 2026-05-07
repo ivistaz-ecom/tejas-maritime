@@ -11,7 +11,7 @@ const Hero = () => {
           alt="Oil Tanker On Sea"
           fill
           priority
-          quality={85}
+          quality={75}
           sizes="100vw"
           className="object-cover"
         />
@@ -20,11 +20,10 @@ const Hero = () => {
       {/* Mobile Banner */}
       <div className="absolute inset-0 block md:hidden">
         <Image
-          src="/home/home_mob_banner.webp"
+          src="/home/home_mobile_banner.webp"
           alt="Oil Tanker On Sea"
           fill
-          priority
-          quality={85}
+          quality={75}
           sizes="100vw"
           className="object-cover"
         />
