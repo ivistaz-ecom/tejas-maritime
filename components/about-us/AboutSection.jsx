@@ -48,7 +48,7 @@ const AboutSection = () => {
           {/* RIGHT IMAGE */}
           <div className="w-full flex justify-center">
           <Image
-            src="/about-us/about-us.webp"
+            src="/about-us/about-us-ship.webp"
             alt="Tanker on sea"
             width={500}   // adjust based on your design
             height={700}  // keeps original ratio

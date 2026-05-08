@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const ServicesHero = () => {
+const AboutHero = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -24,10 +24,10 @@ const ServicesHero = () => {
       <Image
         src={
           isMobile
-            ? "/about-us/about-us-banner.webp"
-            : "/about-us/about-us-mob-banner.webp"
+            ? "/about-us/about-us-mob-banner.webp"
+            : "/about-us/about-us-banner.webp"
         }
-        alt="Seafarer at port"
+        alt="Vessel on sea"
         fill
         sizes="100vw"
         priority
@@ -37,8 +37,8 @@ const ServicesHero = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-[#000000]/30" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto h-full flex items-end md:items-center px-4 sm:px-6 pb-12 md:pb-0">
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl mx-auto h-full flex items-end md:items-end px-4 sm:px-6 pb-12 md:pb-10">
         
         <div className="text-white max-w-2xl">
 
@@ -61,4 +61,4 @@ clients — from agile fiber speedboats to Ultra Large Crude Carriers.
   );
 };
 
-export default ServicesHero;
+export default AboutHero;

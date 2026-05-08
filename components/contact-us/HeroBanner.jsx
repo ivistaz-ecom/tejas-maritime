@@ -24,8 +24,8 @@ const ServicesHero = () => {
       <Image
         src={
           isMobile
-            ? "/contact/contact_home_banner.webp"
-            : "/contact/contact_home_banner.webp"
+            ? "/contact/contact-mob-banner.webp"
+            : "/contact/contact_banner.webp"
         }
         alt="Tanker moving on sea"
         fill
@@ -38,7 +38,7 @@ const ServicesHero = () => {
       <div className="absolute inset-0 bg-[#000000]/30" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto h-full flex items-end md:items-center px-4 sm:px-6 pb-12 md:pb-0">
+      <div className="relative z-10 max-w-7xl mx-auto h-full flex items-end md:items-end px-4 sm:px-6 pb-12 md:pb-10">
         
         <div className="text-white max-w-2xl">
 

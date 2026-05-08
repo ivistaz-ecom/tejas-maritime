@@ -77,20 +77,16 @@ const TeamSection = () => {
       
       {/* Top Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-center font-semibold mb-6 md:mb-16 text-2xl sm:text-3xl">
+        <h2 className="text-center font-semibold mb-6 md:mb-8 text-2xl sm:text-3xl">
           OUR TEAM
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6 md:gap-10 mb-10 md:mb-16 items-center max-w-5xl">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif leading-snug text-center md:text-left">
-              Built on Expertise <br />
+        <div className="mb-10 md:mb-10">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif leading-snug text-center ">
+              Built on Expertise. 
               Driven by Detail.
             </h3>
 
-            <p className="text-gray-300 text-base md:text-lg">
-              Excellence in maritime consulting is not a matter of scale — it is a matter of calibre.
-              Our multidisciplinary team brings together the full technical spectrum required.
-            </p>
           </div>
       </div>
 
