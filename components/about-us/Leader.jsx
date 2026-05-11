@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const LeadershipSection = () => {
   return (
-    <section id="leadership" className="bg-[#e9e4d8] py-16">
+    <section id="leadership" className="bg-[#e9e4d8] md:py-16 py-0">
 
       <div className="max-w-7xl mx-auto px-4 md:px-6">
 

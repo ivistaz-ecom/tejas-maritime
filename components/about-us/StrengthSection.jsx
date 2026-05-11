@@ -4,16 +4,20 @@ import Image from "next/image";
 
 const StrengthSection = () => {
   return (
-    <section id="strength" className="bg-[#e9e4d8] py-16">
+    <section id="strength" className="bg-[#e9e4d8] md:py-16 py-10">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+        <h2 className="block md:hidden text-2xl sm:text-3xl md:text-4xl font-serif text-[#1c1c5a] mb-6 leading-snug">
+          The Strength Behind Every Delivery
+       </h2>
 
         <div className="grid md:grid-cols-2 gap-10 md:gap-10 items-center">
 
           {/* LEFT CONTENT */}
-          <div>
+          <div className="order-2 md:order-1">
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#1c1c5a] mb-6 leading-snug">
+            <h2 className="hidden md:block text-2xl sm:text-3xl md:text-4xl font-serif text-[#1c1c5a] mb-6 leading-snug">
               The Strength Behind Every Delivery
             </h2>
 
@@ -46,7 +50,7 @@ const StrengthSection = () => {
 
           {/* RIGHT IMAGE */}
           
-            <div className="relative w-full max-w-[520px]">
+            <div className=" order-1 md:order-2 relative w-full max-w-[520px]">
 
               <Image
                 src="/about-us/delivery.webp" // update path
