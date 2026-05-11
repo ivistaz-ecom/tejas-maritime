@@ -9,25 +9,25 @@ const teamData = [
     image: "/home/naval-architects.webp",
     title: "Naval Architects",
     desc: "Design, stability analysis, and structural integrity from keel to superstructure.",
-    alt:"Architect holding design",
+    alt: "Architect holding design",
   },
   {
     image: "/home/marine-engineers.webp",
     title: "Marine Engineers",
     desc: "Mechanical and electrical systems, propulsion, and engineering compliance.",
-    alt:"Seafarers at port",
+    alt: "Seafarers at port",
   },
   {
     image: "/home/technical-managers.webp",
     title: "Technical Managers",
     desc: "Operational authority and flag state expertise from professionals with sea experience.",
-    alt:"Seafarer checking engine",
+    alt: "Seafarer checking engine",
   },
   {
     image: "/home/senior-marine-professionals.webp",
     title: "Senior Marine Professionals",
     desc: "Decades of hands-on vessel experience, lending judgment and authority where technical knowledge alone is not enough.",
-    alt:"Seafarer talking on port",
+    alt: "Seafarer talking on port",
   },
 ];
 
@@ -36,95 +36,98 @@ const TeamSection = () => {
   const [visibleCards, setVisibleCards] = useState(3);
 
   useEffect(() => {
-    const updateVisibleCards = () => {
-      const width = window.innerWidth;
-      if (width < 768) {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
         setVisibleCards(1);
-      } else if (width < 1024) {
+      } else if (window.innerWidth < 1024) {
         setVisibleCards(2);
       } else {
         setVisibleCards(3);
       }
     };
 
-    updateVisibleCards();
-    window.addEventListener("resize", updateVisibleCards);
+    handleResize();
 
-    return () => window.removeEventListener("resize", updateVisibleCards);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
-  useEffect(() => {
-    const maxIndex = Math.max(teamData.length - visibleCards, 0);
-    if (index > maxIndex) {
-      setIndex(maxIndex);
-    }
-  }, [index, visibleCards]);
+  const maxIndex = Math.max(teamData.length - visibleCards, 0);
 
   const nextSlide = () => {
-    if (index < teamData.length - visibleCards) {
-      setIndex((prev) => prev + 1);
-    }
+    setIndex((prev) => Math.min(prev + 1, maxIndex));
   };
 
   const prevSlide = () => {
-    if (index > 0) {
-      setIndex((prev) => prev - 1);
-    }
+    setIndex((prev) => Math.max(prev - 1, 0));
   };
 
   return (
     <section className="blue-gradient text-white py-12 md:py-16">
-      
-      {/* Top Content */}
+
+      {/* Heading */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-center font-semibold mb-6 md:mb-8 text-2xl sm:text-3xl">
+        <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-6 md:mb-8">
           OUR TEAM
         </h2>
 
-        <div className="mb-10 md:mb-10">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif leading-snug text-center ">
-              Built on Expertise. 
-              Driven by Detail.
-            </h3>
-
-          </div>
+        <div className="mb-10">
+          <h3 className="text-center text-2xl sm:text-3xl md:text-4xl font-serif leading-snug">
+            Built on Expertise.
+            <br className="sm:hidden" />
+            Driven by Detail.
+          </h3>
+        </div>
       </div>
 
       {/* Carousel */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative">
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6">
 
-        {/* LEFT ARROW */}
+        {/* Left Arrow */}
         <button
           onClick={prevSlide}
           disabled={index === 0}
           aria-label="Previous slide"
-          className="absolute left-0 sm:-left-2 md:-left-6 top-1/2 -translate-y-1/2 z-10 
-          red-gradient-btn w-12 h-12 rounded-full flex items-center justify-center 
-          shadow-lg transition hover:scale-110 
-          disabled:opacity-30 disabled:cursor-not-allowed"
+          className="
+            absolute left-2 md:-left-6
+            top-1/2 -translate-y-1/2 z-10
+            flex items-center justify-center
+            w-11 h-11 rounded-full
+            red-gradient-btn
+            transition-transform duration-300
+            hover:scale-105
+            disabled:opacity-30 disabled:cursor-not-allowed
+          "
         >
-          <FiArrowLeft className="text-white text-xl" />
+          <FiArrowLeft className="text-white text-lg" />
         </button>
 
-
-
-        {/* RIGHT ARROW */}
+        {/* Right Arrow */}
         <button
           onClick={nextSlide}
-          disabled={index >= teamData.length - visibleCards}
+          disabled={index >= maxIndex}
           aria-label="Next slide"
-          className="absolute right-0 sm:-right-2 md:-right-6 top-1/2 -translate-y-1/2 z-10 
-          red-gradient-btn w-12 h-12 rounded-full flex items-center justify-center 
-          shadow-lg transition hover:scale-110 
-          disabled:opacity-30 disabled:cursor-not-allowed"
+          className="
+            absolute right-2 md:-right-6
+            top-1/2 -translate-y-1/2 z-10
+            flex items-center justify-center
+            w-11 h-11 rounded-full
+            red-gradient-btn
+            transition-transform duration-300
+            hover:scale-105
+            disabled:opacity-30 disabled:cursor-not-allowed
+          "
         >
-          <FiArrowRight className="text-white text-xl" />
+          <FiArrowRight className="text-white text-lg" />
         </button>
 
-        {/* SLIDER */}
+        {/* Slider */}
         <div className="overflow-hidden">
           <div
-            className="flex transition-transform duration-500 ease-in-out"
+            className="flex transition-transform duration-500 ease-out"
             style={{
               transform: `translateX(-${(100 / visibleCards) * index}%)`,
             }}
@@ -133,20 +136,40 @@ const TeamSection = () => {
               <div
                 key={i}
                 className="shrink-0 px-2 sm:px-3"
-                style={{ width: `${100 / visibleCards}%` }}
+                style={{
+                  width: `${100 / visibleCards}%`,
+                }}
               >
-                <div className="relative h-[280px] sm:h-[320px] md:h-[350px] w-full mb-4 overflow-hidden">
+                {/* Image */}
+                <div className="relative h-[320px] sm:h-[320px] md:h-[350px] overflow-hidden mb-4">
+
                   <Image
                     src={item.image}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition duration-500 hover:scale-110"
+                    loading="lazy"
+                    sizes="
+                      (max-width: 768px) 100vw,
+                      (max-width: 1024px) 50vw,
+                      33vw
+                    "
+                    className="
+                      object-cover
+                      transition-transform
+                      duration-500
+                      md:hover:scale-105
+                    "
                   />
                 </div>
 
-                <h4 className="text-base sm:text-lg font-semibold">{item.title}</h4>
-                <p className="text-gray-400 text-sm mt-2 pe-1 sm:pe-2">{item.desc}</p>
+                {/* Content */}
+                <h4 className="text-xl sm:text-lg font-semibold">
+                  {item.title}
+                </h4>
+
+                <p className="text-sm text-gray-400 mt-2 leading-7">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>

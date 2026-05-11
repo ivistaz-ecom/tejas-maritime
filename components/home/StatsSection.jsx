@@ -13,23 +13,25 @@ const Counter = ({ target, shouldStart }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!shouldStart) {
-      return;
-    }
+    if (!shouldStart) return;
 
-    let start = 0;
-    const duration = 1500; // animation time
-    const increment = target / (duration / 16);
+    let current = 0;
+
+    const duration = 1200;
+    const stepTime = 30;
+    const steps = duration / stepTime;
+    const increment = target / steps;
 
     const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
+      current += increment;
+
+      if (current >= target) {
         setCount(target);
         clearInterval(timer);
       } else {
-        setCount(Math.floor(start));
+        setCount(Math.floor(current));
       }
-    }, 16);
+    }, stepTime);
 
     return () => clearInterval(timer);
   }, [target, shouldStart]);
@@ -39,52 +41,58 @@ const Counter = ({ target, shouldStart }) => {
 
 const StatsSection = () => {
   const sectionRef = useRef(null);
-  const [shouldStartCount, setShouldStartCount] = useState(false);
+  const [startCounter, setStartCounter] = useState(false);
 
   useEffect(() => {
-    const sectionElement = sectionRef.current;
+    const currentSection = sectionRef.current;
 
-    if (!sectionElement) {
-      return;
-    }
+    if (!currentSection) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setShouldStartCount(true);
+          setStartCounter(true);
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      {
+        threshold: 0.25,
+      }
     );
 
-    observer.observe(sectionElement);
+    observer.observe(currentSection);
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-red-gradient text-white py-12 md:py-16">
+    <section
+      ref={sectionRef}
+      className="bg-red-gradient text-white py-12 md:py-16"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
 
-        {/* Title */}
+        {/* Heading */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif mb-8 md:mb-12">
           WHY TEJAS MARITIME?
         </h2>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
 
           {statsData.map((item, index) => (
             <div key={index}>
-              
-              {/* Count */}
+
+              {/* Number */}
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold">
-                <Counter target={item.value} shouldStart={shouldStartCount} />
+                <Counter
+                  target={item.value}
+                  shouldStart={startCounter}
+                />
               </h3>
 
               {/* Label */}
-              <p className="mt-3 text-sm md:text-base text-gray-100">
+              <p className="mt-3 text-sm md:text-base text-gray-100 leading-6">
                 {item.label}
               </p>
 

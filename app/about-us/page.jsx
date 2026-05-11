@@ -22,7 +22,7 @@ export const metadata = {
     url: "https://www.tejasmaritime.com/about-us",
     images: [
       {
-        url: "/og-images/about_og.png", // 👈 use JPG if possible
+        url: "/og-images/about_og.png", // 👈 use PNG if possible
         width: 1200,
         height: 630,
         alt: "Tejas Maritime About",

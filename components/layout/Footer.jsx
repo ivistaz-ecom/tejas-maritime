@@ -124,10 +124,10 @@ const Footer = () => {
         <button
           type="button"
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 bg-black text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition z-50"
+          className="fixed bottom-6 right-6 red-gradient text-white w-11 h-11 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition z-50"
           aria-label="Scroll to top"
         >
-          <FiArrowUp />
+          <FiArrowUp className="text-white text-lg" />
         </button>
       )}
 

@@ -1,33 +1,25 @@
-import Image from "next/image";
-
 const Hero = () => {
   return (
-    <section className="relative h-[75svh] md:h-screen w-full">
+    <section className="relative h-[75svh] md:h-screen w-full overflow-hidden">
 
-      {/* Desktop Banner */}
-      <div className="absolute inset-0 hidden md:block">
-        <Image
+      {/* Responsive Banner */}
+      <picture>
+
+        {/* Mobile Banner */}
+        <source
+          media="(max-width: 767px)"
+          srcSet="/home/home_mobile_banner.webp"
+        />
+
+        {/* Desktop Banner */}
+        <img
           src="/home/home_banner_v2.webp"
           alt="Oil Tanker On Sea"
-          fill
-          priority
-          quality={75}
-          sizes="100vw"
-          className="object-cover"
+          fetchPriority="high"
+          className="absolute inset-0 h-full w-full object-cover"
         />
-      </div>
 
-      {/* Mobile Banner */}
-      <div className="absolute inset-0 block md:hidden">
-        <Image
-          src="/home/home_mobile_banner.webp"
-          alt="Oil Tanker On Sea"
-          fill
-          quality={75}
-          sizes="100vw"
-          className="object-cover"
-        />
-      </div>
+      </picture>
 
       {/* Content */}
       <div
@@ -43,22 +35,26 @@ const Hero = () => {
         "
       >
 
-        {/* TOP */}
-        <div className="text-white max-w-2xl">
+        {/* Top */}
+        <div className="max-w-2xl text-white">
+
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-serif font-semibold leading-tight">
             Maritime Expertise,
             <br />
             Delivered Without Compromise.
           </h1>
+
         </div>
 
-        {/* BOTTOM */}
-        <div className="text-white max-w-2xl md:mt-6">
+        {/* Bottom */}
+        <div className="max-w-2xl md:mt-6 text-white">
+
           <p className="text-sm sm:text-base md:text-lg text-gray-200">
             For over fifteen years, Tejas Maritime has served the industry's
             most demanding clients — from agile fiber speedboats to Ultra Large
             Crude Carriers.
           </p>
+
         </div>
 
       </div>
