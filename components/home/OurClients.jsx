@@ -5,15 +5,42 @@ import Image from "next/image";
 import Button from "../ui/Button";
 
 const clients = [
-  "/home/logos/Tidewater.webp",
-  "/home/logos/TAG-Offshore.webp",
-  "/home/logos/ONGC.webp",
-  "/home/logos/maldar.webp",
-  "/home/logos/greatoff-grp.webp",
-  "/home/logos/essar.webp",
-  "/home/logos/Anglo-eastern.webp",
-  "/home/logos/Ambuja-Cement.webp",
-  "/home/logos/Adani.webp",
+  {
+    src: "/home/logos/Tidewater.webp",
+    alt: "Tidewater logo",
+  },
+  {
+    src: "/home/logos/TAG-Offshore.webp",
+    alt: "TAG Offshore logo",
+  },
+  {
+    src: "/home/logos/ONGC.webp",
+    alt: "ONGC logo",
+  },
+  {
+    src: "/home/logos/maldar.webp",
+    alt: "Maldar logo",
+  },
+  {
+    src: "/home/logos/greatoff-grp.webp",
+    alt: "Greatoff Group logo",
+  },
+  {
+    src: "/home/logos/essar.webp",
+    alt: "Essar logo",
+  },
+  {
+    src: "/home/logos/Anglo-eastern.webp",
+    alt: "Anglo-Eastern logo",
+  },
+  {
+    src: "/home/logos/Ambuja-Cement.webp",
+    alt: "Ambuja Cement logo",
+  },
+  {
+    src: "/home/logos/Adani.webp",
+    alt: "Adani logo",
+  },
 ];
 
 const ClientsSection = () => {
@@ -114,17 +141,21 @@ const ClientsSection = () => {
               transform: `translateX(-${(index * 100) / visibleLogos}%)`,
             }}
           >
-            {loopedClients.map((src, i) => (
-              <div key={`${src}-${i}`} className="flex justify-center px-2" style={{ minWidth: `${100 / visibleLogos}%` }}>
+            {loopedClients.map((client, i) => (
+              <div
+                key={`${client.src}-${i}`}
+                className="flex justify-center px-2"
+                style={{ minWidth: `${100 / visibleLogos}%` }}
+              >
                 <Image
-                  src={src}
-                  alt="client logo"
+                  src={client.src}
+                  alt={client.alt}
                   width={150}
                   height={90}
                   className="object-contain h-[85px] w-auto"
                 />
               </div>
-            ))}
+            ))} 
           </div>
         </div>
 

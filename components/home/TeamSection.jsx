@@ -138,7 +138,7 @@ const TeamSection = () => {
                 <div className="relative h-[280px] sm:h-[320px] md:h-[350px] w-full mb-4 overflow-hidden">
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={item.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition duration-500 hover:scale-110"
