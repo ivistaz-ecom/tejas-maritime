@@ -16,7 +16,7 @@ const Hero = () => {
           src="/home/home_banner_v2.webp"
           alt="Oil Tanker On Sea"
           fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 md:h-full h-[600px] w-full md:object-cover"
         />
 
       </picture>

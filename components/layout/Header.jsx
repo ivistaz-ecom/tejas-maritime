@@ -1,4 +1,3 @@
-// components/layout/Header.jsx
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
@@ -26,30 +25,31 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="absolute md:top-2 top-0 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+    <header className="absolute top-0 left-0 w-full z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 
-        {/* Main Header */}
-        <div className="relative flex items-center justify-center min-h-[72px]">
+        {/* Header Row */}
+        <div className="relative flex items-center justify-between md:justify-center min-h-[80px]">
 
           {/* Logo */}
           <Link
             href="/"
-            className="absolute left-0 inline-flex items-center"
+            className="md:absolute md:left-0 flex items-center"
             aria-label="Tejas Maritime Home"
           >
             <Image
               src="/tejas-logo.svg"
               alt="Tejas Maritime logo"
-              width={70}
-              height={64}
+              width={90}
+              height={80}
               priority
-              className="h-14 sm:h-20 w-auto"
+              className="h-14 sm:h-16 lg:h-20 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-3 text-white">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-4">
+
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
 
@@ -59,17 +59,22 @@ const Header = () => {
                   href={link.href}
                   className={`
                     wave-link
-                    w-[15vh]
                     relative
-                    text-center
                     overflow-hidden
                     rounded-full
-                    px-5 py-2
-                    text-base
+
+                    w-[120px]
+                    h-[40px]
+
+                    flex items-center justify-center
+
+                    text-sm lg:text-base
                     font-medium
                     text-white
-                    transition-colors
-                    duration-300
+                    whitespace-nowrap
+
+                    transition-all duration-300
+
                     ${
                       isActive
                         ? "wave-active bg-[#100B34]"
@@ -81,29 +86,26 @@ const Header = () => {
                 </Link>
               );
             })}
+
           </nav>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Toggle Button */}
           <button
             type="button"
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
             aria-expanded={isMobileMenuOpen}
             className="
-              absolute right-0 md:hidden
-              inline-flex items-center justify-center
+              md:hidden
+              flex items-center justify-center
               rounded-lg
-              border border-white/20
-              bg-black/20
+              bg-white
               p-2
-              text-white
-              transition-colors
-              duration-200
-              hover:bg-black/30
+              shadow-md
             "
           >
             <svg
-              className="h-5 w-5"
+              className="h-6 w-6 text-[#120B3F]"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -137,20 +139,14 @@ const Header = () => {
             duration-300
             ${
               isMobileMenuOpen
-                ? "max-h-96 opacity-100 mt-5"
+                ? "max-h-96 opacity-100 mt-4"
                 : "max-h-0 opacity-0"
             }
           `}
         >
-          <nav
-            className="
-              rounded-2xl
-              border border-white/10
-              bg-black/25
-              p-3
-            "
-          >
+          <nav className="bg-white rounded-2xl shadow-xl p-4">
             <div className="flex flex-col gap-2">
+
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
 
@@ -158,16 +154,27 @@ const Header = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={
-                      isActive
-                        ? "bg-[#120B3F] text-white px-4 py-3 rounded-lg text-base font-medium"
-                        : "text-white px-4 py-3 rounded-lg text-base font-medium hover:bg-white/10 transition-colors duration-200"
-                    }
+                    className={`
+                      rounded-xl
+                      px-4
+                      py-3
+                      text-base
+                      font-medium
+                      transition-all
+                      duration-200
+
+                      ${
+                        isActive
+                          ? "bg-[#120B3F] text-white"
+                          : "text-[#120B3F] hover:bg-gray-100"
+                      }
+                    `}
                   >
                     {link.label}
                   </Link>
                 );
               })}
+
             </div>
           </nav>
         </div>

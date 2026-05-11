@@ -114,14 +114,19 @@ p {
 }
 
 /* 🌊 Default wave (hover = white) */
+/* ========================================
+   WAVE LINK
+======================================== */
+
 .wave-link {
   position: relative;
-  overflow: hidden;
 }
 
+/* Hover Wave */
 .wave-link::after {
   content: "";
   position: absolute;
+
   left: 0;
   bottom: 0;
   width: 200%;
@@ -133,13 +138,13 @@ p {
   transition: opacity 0.3s ease;
 }
 
-/* Hover (white wave) */
+/* Hover Effect */
 .wave-link:hover::after {
   opacity: 1;
   animation: waveMove 1.5s linear infinite;
 }
 
-/* 🌊 Active (ICE BLUE wave) */
+/* Active Wave */
 .wave-active::after {
   content: "";
   position: absolute;
@@ -158,11 +163,11 @@ p {
   from {
     transform: translateX(-50%);
   }
+
   to {
     transform: translateX(0%);
   }
 }
-
 
 /* RED CTA SHINE ANIMATION */
 .shine-btn {
