@@ -5,29 +5,51 @@ import Map from "@/components/contact-us/Map"
 
 /* ================= SEO ================= */
 export const metadata = {
-  title: "Contact Tejas Maritime | Ship Management & Marine Survey Experts",
+  title:
+    "Contact Tejas Maritime | Ship Management & Marine Survey Experts",
+
   description:
     "Contact Tejas Maritime for maritime technical management, crew management services, naval architecture consultancy, marine surveys, and ship design solutions worldwide.",
+
   alternates: {
     canonical: "https://www.tejasmaritime.com/contact-us",
   },
+
   openGraph: {
-    title: "Contact Tejas Maritime | Ship Management & Marine Survey Experts",
+    type: "website", // ✅ Required
+
+    title:
+      "Contact Tejas Maritime | Ship Management & Marine Survey Experts",
+
     description:
       "Contact Tejas Maritime for maritime technical management, crew management services, naval architecture consultancy, marine surveys, and ship design solutions worldwide.",
+
     url: "https://www.tejasmaritime.com/contact-us",
+
+    siteName: "Tejas Maritime", // ✅ Recommended
+
     images: [
       {
-        url: "/og-images/contact_og.png", // 👈 use JPG if possible
+        url: "https://www.tejasmaritime.com/og-images/contact_og.png", // ✅ Absolute URL
         width: 1200,
         height: 630,
         alt: "Tejas Maritime Contact",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    images: ["/contact/contact-banner.jpg"],
+
+    title:
+      "Contact Tejas Maritime | Ship Management & Marine Survey Experts",
+
+    description:
+      "Contact Tejas Maritime for maritime technical management, crew management services, naval architecture consultancy, marine surveys, and ship design solutions worldwide.",
+
+    images: [
+      "https://www.tejasmaritime.com/contact/contact-banner.jpg",
+    ], // ✅ Absolute URL
   },
 };
 

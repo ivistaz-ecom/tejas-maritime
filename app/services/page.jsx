@@ -5,7 +5,9 @@ import NewBuilding from "@/components/services/NewBuilding";
 
 /* ================= SEO ================= */
 export const metadata = {
-  title: "Ship Technical Management, Marine Surveys & Naval Architecture Services",
+  title:
+    "Ship Technical Management, Marine Surveys & Naval Architecture Services",
+
   description:
     "Explore Tejas Maritime’s services including ship technical management, crew management, marine survey services, naval architecture consultancy, and ship design & construction solutions.",
 
@@ -14,13 +16,20 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "Ship Technical Management, Marine Surveys & Naval Architecture Services",
+    type: "website", // ✅ Add this
+    title:
+      "Ship Technical Management, Marine Surveys & Naval Architecture Services",
+
     description:
       "Explore Tejas Maritime’s services including ship technical management, crew management, marine survey services, naval architecture consultancy, and ship design & construction solutions.",
+
     url: "https://www.tejasmaritime.com/services",
+
+    siteName: "Tejas Maritime", // ✅ optional but recommended
+
     images: [
       {
-        url: "/og-images/services_og.png", // 👉 use JPG
+        url: "https://www.tejasmaritime.com/og-images/services_og.png", // ✅ absolute URL
         width: 1200,
         height: 630,
         alt: "Tejas Maritime Services",
@@ -30,10 +39,16 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Explore Tejas Maritime’s services including ship technical management, crew management, marine survey services, naval architecture consultancy, and ship design & construction solutions.",
+
+    title:
+      "Ship Technical Management, Marine Surveys & Naval Architecture Services",
+
     description:
       "Technical management, survey, and maritime consulting services.",
-    images: ["/services/services-banner.jpg"],
+
+    images: [
+      "https://www.tejasmaritime.com/services/services-banner.jpg",
+    ], // ✅ absolute URL
   },
 };
 

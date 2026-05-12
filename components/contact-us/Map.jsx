@@ -8,6 +8,7 @@ const MapSection = () => {
 
       {/* MAP */}
       <iframe
+        title="Tejas Maritime Location Map"
         src="https://www.google.com/maps?q=19.0150708,73.0385057&z=15&output=embed&hl=en"
         className="w-full h-full border-0 transition-all duration-700 ease-out 
                    group-hover:scale-105 group-hover:brightness-110"

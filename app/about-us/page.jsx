@@ -10,28 +10,47 @@ import Philosophy from "@/components/about-us/Philosophy";
 
 export const metadata = {
   title: "About Tejas Maritime | Maritime Consulting & Technical Experts",
+
   description:
     "Established in 2009, Tejas Maritime delivers maritime consulting, naval architecture services, marine engineering, ship surveys, and technical management for commercial vessels globally.",
+
   alternates: {
     canonical: "https://www.tejasmaritime.com/about-us",
   },
+
   openGraph: {
+    type: "website", // ✅ Required
+
     title: "About Tejas Maritime | Maritime Consulting & Technical Experts",
+
     description:
       "Established in 2009, Tejas Maritime delivers maritime consulting, naval architecture services, marine engineering, ship surveys, and technical management for commercial vessels globally.",
+
     url: "https://www.tejasmaritime.com/about-us",
+
+    siteName: "Tejas Maritime", // ✅ Recommended
+
     images: [
       {
-        url: "/og-images/about_og.png", // 👈 use PNG if possible
+        url: "https://www.tejasmaritime.com/og-images/about_og.png", // ✅ Absolute URL
         width: 1200,
         height: 630,
         alt: "Tejas Maritime About",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    images: ["/about/about-banner.jpg"],
+
+    title: "About Tejas Maritime | Maritime Consulting & Technical Experts",
+
+    description:
+      "Established in 2009, Tejas Maritime delivers maritime consulting, naval architecture services, marine engineering, ship surveys, and technical management for commercial vessels globally.",
+
+    images: [
+      "https://www.tejasmaritime.com/about/about-banner.jpg",
+    ], // ✅ Absolute URL
   },
 };
 
