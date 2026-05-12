@@ -91,6 +91,39 @@ const RootLayout = ({ children }) => {
           />
         </noscript>
 
+        {/* ================= SCHEMA ORG ================= */}
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+
+              name: "Tejas Maritime Pvt. Ltd.",
+
+              url: "https://www.tejasmaritime.com",
+
+              logo: "https://www.tejasmaritime.com/logo.png",
+
+              description:
+                "Tejas Maritime provides maritime technical management, ship crew management, naval architecture services, marine surveys, and ship design & construction solutions for commercial vessels worldwide.",
+
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Navi Mumbai",
+                addressRegion: "Maharashtra",
+                addressCountry: "India",
+              },
+
+              sameAs: [
+                "https://www.linkedin.com/company/tejas-maritime"
+              ],
+            }),
+          }}
+        />
+
         {/* ================= SITE ================= */}
         <Header />
         <main>{children}</main>
