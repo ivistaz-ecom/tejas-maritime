@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative md:h-screen h-[85vh] w-full overflow-hidden">
 
       {/* Desktop Banner */}
       <Image
@@ -23,7 +23,7 @@ const Hero = () => {
         priority
         quality={60}
         sizes="100vw"
-        className="block md:hidden object-cover"
+        className="block md:hidden"
       />
 
       {/* Overlay */}
