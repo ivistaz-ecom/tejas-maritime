@@ -1,5 +1,3 @@
-"use client";
-
 const approachData = [
   {
     title: "Technical Precision",

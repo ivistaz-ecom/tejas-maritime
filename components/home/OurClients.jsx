@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
 
@@ -46,37 +43,8 @@ const clients = [
 const duplicatedClients = [...clients, ...clients];
 
 const ClientsSection = () => {
-  const sectionRef = useRef(null);
-  const [startAnimation, setStartAnimation] = useState(false);
-
-  useEffect(() => {
-    const currentSection = sectionRef.current;
-
-    if (!currentSection) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setStartAnimation(true);
-        } else {
-          setStartAnimation(false);
-        }
-      },
-      {
-        threshold: 0.2,
-      }
-    );
-
-    observer.observe(currentSection);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="bg-[#e9e4d8] py-12 md:py-16 overflow-hidden"
-    >
+    <section className="bg-[#e9e4d8] py-12 md:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Title */}
@@ -84,19 +52,16 @@ const ClientsSection = () => {
           OUR CLIENTS
         </h2>
 
-        {/* Logo Marquee */}
+        {/* Marquee */}
         <div className="overflow-hidden group">
 
           <div
-            className={`
+            className="
               flex w-max
-              ${
-                startAnimation
-                  ? "animate-marquee"
-                  : ""
-              }
+              animate-marquee
+              will-change-transform
               group-hover:[animation-play-state:paused]
-            `}
+            "
           >
 
             {duplicatedClients.map((client, index) => (
@@ -105,7 +70,7 @@ const ClientsSection = () => {
                 className="
                   flex items-center justify-center
                   shrink-0
-                  w-[160px]
+                  w-[140px]
                   sm:w-[180px]
                   md:w-[220px]
                   px-4
@@ -114,10 +79,16 @@ const ClientsSection = () => {
                 <Image
                   src={client.src}
                   alt={client.alt}
-                  width={150}
-                  height={90}
+                  width={140}
+                  height={80}
                   loading="lazy"
-                  className="object-contain h-[70px] sm:h-[85px] w-auto"
+                  className="
+                    object-contain
+                    h-[55px]
+                    sm:h-[75px]
+                    md:h-[85px]
+                    w-auto
+                  "
                 />
               </div>
             ))}
@@ -142,7 +113,6 @@ const ClientsSection = () => {
           "
         >
 
-          {/* Left */}
           <div className="max-w-xl">
 
             <h3 className="text-xl sm:text-2xl md:text-[35px] font-serif mb-3 md:mb-4 leading-snug">
@@ -157,7 +127,6 @@ const ClientsSection = () => {
 
           </div>
 
-          {/* Right */}
           <div className="w-full sm:w-auto flex justify-center md:justify-end shrink-0">
 
             <Button

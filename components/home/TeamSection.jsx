@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
@@ -33,26 +33,14 @@ const teamData = [
 
 const TeamSection = () => {
   const [index, setIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(3);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setVisibleCards(1);
-      } else if (window.innerWidth < 1024) {
-        setVisibleCards(2);
-      } else {
-        setVisibleCards(3);
-      }
-    };
+  const visibleCards = useMemo(() => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth < 768) return 1;
+      if (window.innerWidth < 1024) return 2;
+    }
 
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return 3;
   }, []);
 
   const maxIndex = Math.max(teamData.length - visibleCards, 0);
@@ -70,6 +58,7 @@ const TeamSection = () => {
 
       {/* Heading */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+
         <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-6 md:mb-8">
           OUR TEAM
         </h2>
@@ -81,6 +70,7 @@ const TeamSection = () => {
             Driven by Detail.
           </h3>
         </div>
+
       </div>
 
       {/* Carousel */}
@@ -97,8 +87,9 @@ const TeamSection = () => {
             flex items-center justify-center
             w-11 h-11 rounded-full
             red-gradient-btn
-            transition-transform duration-300
-            hover:scale-105
+            md:transition-transform
+            md:duration-300
+            md:hover:scale-105
             disabled:opacity-30 disabled:cursor-not-allowed
           "
         >
@@ -116,8 +107,9 @@ const TeamSection = () => {
             flex items-center justify-center
             w-11 h-11 rounded-full
             red-gradient-btn
-            transition-transform duration-300
-            hover:scale-105
+            md:transition-transform
+            md:duration-300
+            md:hover:scale-105
             disabled:opacity-30 disabled:cursor-not-allowed
           "
         >
@@ -126,22 +118,34 @@ const TeamSection = () => {
 
         {/* Slider */}
         <div className="overflow-hidden">
+
           <div
-            className="flex transition-transform duration-500 ease-out"
+            className="
+              flex
+              transition-transform
+              duration-500
+              ease-out
+              will-change-transform
+            "
             style={{
               transform: `translateX(-${(100 / visibleCards) * index}%)`,
             }}
           >
-            {teamData.map((item, i) => (
+
+            {teamData.map((item) => (
               <div
-                key={i}
-                className="shrink-0 px-2 sm:px-3"
-                style={{
-                  width: `${100 / visibleCards}%`,
-                }}
+                key={item.title}
+                className="
+                  shrink-0
+                  w-full
+                  md:w-1/2
+                  lg:w-1/3
+                  px-2 sm:px-3
+                "
               >
+
                 {/* Image */}
-                <div className="relative h-[320px] sm:h-[320px] md:h-[350px] overflow-hidden mb-4">
+                <div className="relative h-[320px] md:h-[350px] overflow-hidden mb-4">
 
                   <Image
                     src={item.image}
@@ -155,11 +159,12 @@ const TeamSection = () => {
                     "
                     className="
                       object-cover
-                      transition-transform
-                      duration-500
+                      md:transition-transform
+                      md:duration-500
                       md:hover:scale-105
                     "
                   />
+
                 </div>
 
                 {/* Content */}
@@ -170,9 +175,12 @@ const TeamSection = () => {
                 <p className="text-sm text-gray-400 mt-2 leading-7">
                   {item.desc}
                 </p>
+
               </div>
             ))}
+
           </div>
+
         </div>
 
       </div>

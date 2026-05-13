@@ -31,9 +31,9 @@ const Service = () => {
               uppercase
               tracking-wide
               text-white
-              transition-transform
-              duration-300
-              hover:scale-[1.02]
+              md:transition-transform
+              md:duration-300
+              md:hover:scale-[1.02]
             "
           >
             Begin a Partnership

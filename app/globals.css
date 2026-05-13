@@ -250,7 +250,6 @@ p {
   }
 }
 
-
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -262,17 +261,5 @@ p {
 }
 
 .animate-marquee {
-  animation: marquee 28s linear infinite;
-  will-change: transform;
-}
-
-/* Pause on hover */
-.marquee-wrapper:hover .animate-marquee {
-  animation-play-state: paused;
-}
-
-@media (max-width: 768px) {
-  .animate-marquee {
-    animation-duration: 18s;
-  }
+  animation: marquee 25s linear infinite;
 }

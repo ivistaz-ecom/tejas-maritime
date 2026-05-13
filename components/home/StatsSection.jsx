@@ -10,30 +10,34 @@ const statsData = [
 ];
 
 const Counter = ({ target, shouldStart }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target);
 
   useEffect(() => {
     if (!shouldStart) return;
 
-    let current = 0;
+    let start = 0;
 
-    const duration = 1200;
-    const stepTime = 30;
-    const steps = duration / stepTime;
-    const increment = target / steps;
+    const duration = 1000;
+    const startTime = performance.now();
 
-    const timer = setInterval(() => {
-      current += increment;
+    const updateCounter = (currentTime) => {
+      const progress = Math.min(
+        (currentTime - startTime) / duration,
+        1
+      );
 
-      if (current >= target) {
-        setCount(target);
-        clearInterval(timer);
+      const currentCount = Math.floor(progress * target);
+
+      setCount(currentCount);
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
       } else {
-        setCount(Math.floor(current));
+        setCount(target);
       }
-    }, stepTime);
+    };
 
-    return () => clearInterval(timer);
+    requestAnimationFrame(updateCounter);
   }, [target, shouldStart]);
 
   return <span>{count}+</span>;
@@ -44,10 +48,6 @@ const StatsSection = () => {
   const [startCounter, setStartCounter] = useState(false);
 
   useEffect(() => {
-    const currentSection = sectionRef.current;
-
-    if (!currentSection) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -56,11 +56,13 @@ const StatsSection = () => {
         }
       },
       {
-        threshold: 0.25,
+        threshold: 0.2,
       }
     );
 
-    observer.observe(currentSection);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => observer.disconnect();
   }, []);
@@ -80,8 +82,8 @@ const StatsSection = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
 
-          {statsData.map((item, index) => (
-            <div key={index}>
+          {statsData.map((item) => (
+            <div key={item.label}>
 
               {/* Number */}
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold">

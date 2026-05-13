@@ -1,25 +1,33 @@
+import Image from "next/image";
+
 const Hero = () => {
   return (
-    <section className="relative h-[75svh] md:h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden">
 
-      {/* Responsive Banner */}
-      <picture>
+      {/* Desktop Banner */}
+      <Image
+        src="/home/home_banner_v2.webp"
+        alt="Oil Tanker On Sea"
+        fill
+        priority
+        quality={70}
+        sizes="100vw"
+        className="hidden md:block object-cover"
+      />
 
-        {/* Mobile Banner */}
-        <source
-          media="(max-width: 767px)"
-          srcSet="/home/home_mobile_banner.webp"
-        />
+      {/* Mobile Banner */}
+      <Image
+        src="/home/home_mobile_banner.webp"
+        alt="Oil Tanker On Sea"
+        fill
+        priority
+        quality={60}
+        sizes="100vw"
+        className="block md:hidden object-cover"
+      />
 
-        {/* Desktop Banner */}
-        <img
-          src="/home/home_banner_v2.webp"
-          alt="Oil Tanker On Sea"
-          fetchPriority="high"
-          className="absolute inset-0 md:h-full h-[600px] w-full md:object-cover"
-        />
-
-      </picture>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/20 z-[1]" />
 
       {/* Content */}
       <div
@@ -30,31 +38,27 @@ const Hero = () => {
           flex flex-col
           justify-between md:justify-end
           px-4 md:px-6
-          pt-28 md:pt-0
-          pb-18 md:pb-20
+          pt-36 md:pt-0
+          pb-16 md:pb-20
         "
       >
 
-        {/* Top */}
-        <div className="max-w-2xl text-white">
-
+        {/* Heading */}
+        <div className="max-w-2xl text-white md:mb-6">
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-serif font-semibold leading-tight">
             Maritime Expertise,
             <br />
             Delivered Without Compromise.
           </h1>
-
         </div>
 
-        {/* Bottom */}
-        <div className="max-w-2xl md:mt-6 text-white">
-
+        {/* Sub Heading */}
+        <div className="max-w-2xl text-white">
           <p className="text-sm sm:text-base md:text-lg text-gray-200">
             For over fifteen years, Tejas Maritime has served the industry's
             most demanding clients — from agile fiber speedboats to Ultra Large
             Crude Carriers.
           </p>
-
         </div>
 
       </div>

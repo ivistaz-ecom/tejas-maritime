@@ -14,7 +14,9 @@ const navLinks = [
 
 const Header = () => {
   const pathname = usePathname();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] =
+    useState(false);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -26,6 +28,7 @@ const Header = () => {
 
   return (
     <header className="absolute top-0 left-0 w-full z-50">
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 
         {/* Header Row */}
@@ -37,18 +40,19 @@ const Header = () => {
             className="md:absolute md:left-0 flex items-center"
             aria-label="Tejas Maritime Home"
           >
+
             <Image
               src="/tejas-logo.svg"
               alt="Tejas Maritime logo"
               width={90}
               height={80}
-              priority
               className="h-14 sm:h-16 lg:h-20 w-auto"
             />
+
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-4 lg:gap-4">
+          <nav className="hidden md:flex items-center gap-4">
 
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -73,12 +77,13 @@ const Header = () => {
                     text-white
                     whitespace-nowrap
 
-                    transition-all duration-300
+                    md:transition-colors
+                    md:duration-300
 
                     ${
                       isActive
                         ? "wave-active bg-[#100B34]"
-                        : "hover:bg-white/10"
+                        : "md:hover:bg-white/10"
                     }
                   `}
                 >
@@ -89,7 +94,7 @@ const Header = () => {
 
           </nav>
 
-          {/* Mobile Toggle Button */}
+          {/* Mobile Toggle */}
           <button
             type="button"
             onClick={toggleMenu}
@@ -104,30 +109,52 @@ const Header = () => {
               shadow-md
             "
           >
-            <svg
-              className="h-6 w-6 text-[#120B3F]"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isMobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
+
+            <div className="relative w-6 h-6">
+
+              <span
+                className={`
+                  absolute left-0 top-1
+                  h-[2px] w-6 bg-[#120B3F]
+                  transition-transform duration-300
+                  ${
+                    isMobileMenuOpen
+                      ? "rotate-45 translate-y-2"
+                      : ""
+                  }
+                `}
+              />
+
+              <span
+                className={`
+                  absolute left-0 top-3
+                  h-[2px] w-6 bg-[#120B3F]
+                  transition-opacity duration-300
+                  ${
+                    isMobileMenuOpen
+                      ? "opacity-0"
+                      : "opacity-100"
+                  }
+                `}
+              />
+
+              <span
+                className={`
+                  absolute left-0 top-5
+                  h-[2px] w-6 bg-[#120B3F]
+                  transition-transform duration-300
+                  ${
+                    isMobileMenuOpen
+                      ? "-rotate-45 -translate-y-2"
+                      : ""
+                  }
+                `}
+              />
+
+            </div>
+
           </button>
+
         </div>
 
         {/* Mobile Navigation */}
@@ -135,16 +162,18 @@ const Header = () => {
           className={`
             md:hidden
             overflow-hidden
-            transition-all
+            transition-opacity
             duration-300
             ${
               isMobileMenuOpen
-                ? "max-h-96 opacity-100 mt-4"
-                : "max-h-0 opacity-0"
+                ? "opacity-100 mt-4"
+                : "opacity-0 h-0"
             }
           `}
         >
+
           <nav className="bg-white rounded-2xl shadow-xl p-4">
+
             <div className="flex flex-col gap-2">
 
               {navLinks.map((link) => {
@@ -156,17 +185,16 @@ const Header = () => {
                     href={link.href}
                     className={`
                       rounded-xl
-                      px-4
-                      py-3
-                      text-base
-                      font-medium
-                      transition-all
-                      duration-200
+                      px-4 py-3
+                      text-base font-medium
+
+                      md:transition-colors
+                      md:duration-200
 
                       ${
                         isActive
                           ? "bg-[#120B3F] text-white"
-                          : "text-[#120B3F] hover:bg-gray-100"
+                          : "text-[#120B3F]"
                       }
                     `}
                   >
@@ -176,9 +204,13 @@ const Header = () => {
               })}
 
             </div>
+
           </nav>
+
         </div>
+
       </div>
+
     </header>
   );
 };
