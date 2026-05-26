@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/image"
 
 const clients = [
   {
@@ -37,15 +37,14 @@ const clients = [
     src: "/home/logos/Adani.webp",
     alt: "Adani logo",
   },
-];
+]
 
-const duplicatedClients = [...clients, ...clients];
+const duplicatedClients = [...clients, ...clients]
 
 const ClientsSection = () => {
   return (
     <section className="bg-[#e9e4d8] py-12 md:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-
         {/* Title */}
         <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-serif text-[#1c1c5a] mb-10 md:mb-16">
           OUR CLIENTS
@@ -53,7 +52,6 @@ const ClientsSection = () => {
 
         {/* Marquee */}
         <div className="overflow-hidden group">
-
           <div
             className="
               flex w-max
@@ -62,7 +60,6 @@ const ClientsSection = () => {
               group-hover:[animation-play-state:paused]
             "
           >
-
             {duplicatedClients.map((client, index) => (
               <div
                 key={`${client.src}-${index}`}
@@ -91,7 +88,6 @@ const ClientsSection = () => {
                 />
               </div>
             ))}
-
           </div>
         </div>
 
@@ -101,12 +97,11 @@ const ClientsSection = () => {
             max-w-6xl mx-auto
             mt-12 md:mt-20
             rounded-2xl md:rounded-3xl
-            bg-linear-to-r from-[#0b0b3c] to-[#1a145f]
+            bg-[#1C6882]
             p-6 sm:p-8 md:p-12
             text-white
           "
         >
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             <div>
               <h3 className="text-2xl sm:text-3xl md:text-[35px] font-serif leading-tight">
@@ -114,7 +109,16 @@ const ClientsSection = () => {
               </h3>
 
               <div className="mt-5 space-y-4 text-white leading-7 text-sm sm:text-base">
-                <Image src="/marinetech.png" alt="Marinetech" width={100} height={100} className="w-full h-auto" />
+                <div className="mx-20">
+                  <Image
+                    src="/home/marintech.png"
+                    alt="Marinetech"
+                    width={200}
+                    height={200}
+                    className="w-[90%] h-[90%]"
+                  />
+                </div>
+
                 <p>
                   Marinetech Safety &amp; Shipping Corporation is a marine
                   safety and technical services company specializing in vessel
@@ -135,7 +139,7 @@ const ClientsSection = () => {
                 </p>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap gap-3 mx-35">
                 <a
                   href="https://marinetechss.com/contact"
                   target="_blank"
@@ -155,7 +159,7 @@ const ClientsSection = () => {
                 >
                   CONNECT TODAY
                 </a>
-                <a
+                {/* <a
                   href="https://marinetechss.com/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -173,11 +177,11 @@ const ClientsSection = () => {
                   "
                 >
                   KNOW MORE
-                </a>
+                </a> */}
               </div>
             </div>
 
-            <div>
+            <div className="mt-3">
               <h4 className="text-xl sm:text-2xl font-serif mb-3">
                 Their services include:
               </h4>
@@ -200,9 +204,7 @@ const ClientsSection = () => {
                 <li className="py-3 border-b borde  r-[#d9a7af]">
                   Gas Detection Services
                 </li>
-                <li className="py-3 border-b border-white">
-                  BWMS Support
-                </li>
+                <li className="py-3 border-b border-white">BWMS Support</li>
                 <li className="py-3 border-b border-white">
                   Flag Surveys &amp; Audit Inspections
                 </li>
@@ -216,7 +218,7 @@ const ClientsSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ClientsSection;
+export default ClientsSection
