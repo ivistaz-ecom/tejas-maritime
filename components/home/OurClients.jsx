@@ -113,9 +113,9 @@ const ClientsSection = () => {
                   <Image
                     src="/home/marintech.png"
                     alt="Marinetech"
-                    width={200}
-                    height={200}
-                    className="w-[90%] h-[90%]"
+                    width={300}
+                    height={300}
+                    className="md:w-[90%] md:h-[90%] w-full h-full"
                   />
                 </div>
 
@@ -139,7 +139,7 @@ const ClientsSection = () => {
                 </p>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-3 mx-35">
+              <div className="mt-6 flex flex-wrap gap-3 md:mx-35 mx-20">
                 <a
                   href="https://marinetechss.com/contact"
                   target="_blank"
@@ -181,7 +181,7 @@ const ClientsSection = () => {
               </div>
             </div>
 
-            <div className="mt-3">
+            <div className="md:mt-3 mt-0">
               <h4 className="text-xl sm:text-2xl font-serif mb-3">
                 Their services include:
               </h4>
