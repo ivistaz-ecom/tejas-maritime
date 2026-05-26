@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Button from "../ui/Button";
 
 const clients = [
   {
@@ -102,52 +101,118 @@ const ClientsSection = () => {
             max-w-6xl mx-auto
             mt-12 md:mt-20
             rounded-2xl md:rounded-3xl
-            bg-linear-to-r
-            from-[#0b0b3c]
-            to-[#1a145f]
-            p-6 sm:p-8 md:p-14
-            flex flex-col md:flex-row
-            items-center justify-between
-            gap-6 md:gap-8
+            bg-linear-to-r from-[#0b0b3c] to-[#1a145f]
+            p-6 sm:p-8 md:p-12
             text-white
           "
         >
 
-          <div className="max-w-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            <div>
+              <h3 className="text-2xl sm:text-3xl md:text-[35px] font-serif leading-tight">
+                Looking for reliable marine safety services and ship supplies?
+              </h3>
 
-            <h3 className="text-xl sm:text-2xl md:text-[35px] font-serif mb-3 md:mb-4 leading-snug">
-              Your next project deserves the right partnership from the start.
-            </h3>
+              <div className="mt-5 space-y-4 text-white leading-7 text-sm sm:text-base">
+                <Image src="/marinetech.png" alt="Marinetech" width={100} height={100} className="w-full h-auto" />
+                <p>
+                  Marinetech Safety &amp; Shipping Corporation is a marine
+                  safety and technical services company specializing in vessel
+                  compliance, inspection, servicing, and ship supply solutions
+                  for the maritime industry.
+                </p>
+                <p>
+                  Their expertise covers lifesaving equipment servicing,
+                  firefighting systems, navigation and communication support,
+                  calibration services, audits, inspections, and marine safety
+                  product supplies.
+                </p>
+                <p>
+                  With a strong focus on operational reliability and regulatory
+                  compliance, they support shipowners and operators with
+                  end-to-end marine safety solutions designed to keep vessels
+                  safe, compliant, and inspection-ready.
+                </p>
+              </div>
 
-            <p className="text-gray-300 leading-7">
-              Whether you are optimising an existing fleet, planning a new
-              build, or navigating a complex compliance challenge — we are
-              ready to engage.
-            </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="https://marinetechss.com/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    red-gradient-btn
+                    shine-btn
+                    px-5 sm:px-6
+                    text-center
+                    py-3
+                    rounded-full
+                    text-white
+                    text-xs sm:text-sm
+                    font-medium
+                    w-fit
+                  "
+                >
+                  CONNECT TODAY
+                </a>
+                <a
+                  href="https://marinetechss.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    red-gradient-btn
+                    shine-btn
+                    px-5 sm:px-6
+                    text-center
+                    py-3
+                    rounded-full
+                    text-white
+                    text-xs sm:text-sm
+                    font-medium
+                    w-fit
+                  "
+                >
+                  KNOW MORE
+                </a>
+              </div>
+            </div>
 
+            <div>
+              <h4 className="text-xl sm:text-2xl font-serif mb-3">
+                Their services include:
+              </h4>
+              <ul className="text-sm sm:text-base text-white">
+                <li className="py-3 border-b border-white">
+                  Lifeboat &amp; Liferaft Servicing
+                </li>
+                <li className="py-3 border-b border-white">
+                  Fire Fighting Equipment &amp; System Services
+                </li>
+                <li className="py-3 border-b border-white">
+                  GMDSS &amp; Navigation Equipment Support
+                </li>
+                <li className="py-3 border-b border-white">
+                  Calibration &amp; Testing Services
+                </li>
+                <li className="py-3 border-b border-white">
+                  Cargo Gear Load Testing
+                </li>
+                <li className="py-3 border-b borde  r-[#d9a7af]">
+                  Gas Detection Services
+                </li>
+                <li className="py-3 border-b border-white">
+                  BWMS Support
+                </li>
+                <li className="py-3 border-b border-white">
+                  Flag Surveys &amp; Audit Inspections
+                </li>
+                <li className="py-3 border-b border-white">
+                  Marine Safety Equipment Supply
+                </li>
+                <li className="pt-3">General Ship Supply Solutions</li>
+              </ul>
+            </div>
           </div>
-
-          <div className="w-full sm:w-auto flex justify-center md:justify-end shrink-0">
-
-            <Button
-              href="/contact-us"
-              label="SPEAK TO OUR EXPERTS"
-              className="
-                red-gradient-btn
-                shine-btn
-                px-5 sm:px-6
-                text-center
-                py-3
-                rounded-full
-                text-white
-                text-xs sm:text-sm
-                font-medium
-                w-fit
-              "
-            />
-
-          </div>
-
         </div>
       </div>
     </section>
