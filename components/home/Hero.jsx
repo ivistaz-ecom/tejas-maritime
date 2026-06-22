@@ -1,30 +1,23 @@
-import Image from "next/image";
-
 const Hero = () => {
   return (
-    <section className="relative md:h-screen h-[85vh] w-full overflow-hidden">
+    <section className="relative md:h-screen h-[85svh] w-full overflow-hidden">
 
-      {/* Desktop Banner */}
-      <Image
-        src="/home/home_banner_v2.webp"
-        alt="Oil Tanker On Sea"
-        fill
-        priority
-        quality={70}
-        sizes="100vw"
-        className="hidden md:block object-cover"
-      />
-
-      {/* Mobile Banner */}
-      <Image
-        src="/home/home_mobile_banner.webp"
-        alt="Oil Tanker On Sea"
-        fill
-        priority
-        quality={60}
-        sizes="100vw"
-        className="block md:hidden"
-      />
+      {/* Art-directed hero: browser loads only the matching source */}
+      <picture className="absolute inset-0">
+        <source
+          media="(min-width: 768px)"
+          srcSet="/home/home_banner_v2.webp"
+        />
+        <img
+          src="/home/home_mobile_banner.webp"
+          alt="Oil Tanker On Sea"
+          width={780}
+          height={908}
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </picture>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/20 z-[1]" />

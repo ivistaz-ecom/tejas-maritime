@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import ContactForm from "./ContactForm";

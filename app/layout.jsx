@@ -55,13 +55,6 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en" className={raleway.variable}>
-      <head>
-      <link
-          rel="preload"
-          as="image"
-          href="/home/home_banner_v2.webp"
-        />
-      </head>
       <body>
 
         {/* ================= GTM SCRIPT ================= */}
