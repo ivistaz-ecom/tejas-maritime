@@ -57,7 +57,21 @@ const RootLayout = ({ children }) => {
     <html lang="en" className={raleway.variable}>
       <body>
 
-        {/* ================= Google Tag Manager ================= */}
+        {/* GA4 direct — GTM alone was not sending hits; pause the GA4 tag in GTM to avoid duplicates */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4R3CC8R735"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4R3CC8R735');
+          `}
+        </Script>
+
+        {/* Google Tag Manager — for other marketing tags; GA4 handled above */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
