@@ -66,7 +66,7 @@ const Footer = () => {
 
             <li>
               <a
-                href="https://www.google.com/maps/place/TEJAS+MARITIME+PVT.+LTD+(Formerly+known+as+Mac+Ship+Design+%26+Construction+Pvt.Ltd)"
+                href="https://maps.app.goo.gl/P9NbdvbkvNA69Z1v5"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
